@@ -1,8 +1,8 @@
 // EXERCISE 6 - QUESTION 2
 
 // Change values of p and q to (2, 4), (5, 5) or (5, 10)
-p = 5;
-q = 10;
+p = 2;
+q = 4;
 
 // Define some parameters
 a = 0.1; // a(k)=0.1
@@ -15,26 +15,25 @@ A = zeros(1,length(omega));
 
 // Compute B(e^jw) into "B"
 // Write your code here
-for m=0:............
-    B = ............;
+for m=0:q
+    B = B+b*((exp(%i*omega))^(-m));
 end
 
 // Compute A(e^jw) into "A"
 // Write your code here
-for m=0:............
+for m=0:p
     if m==0
-        A = ............;
+        A = 1;
     else
-        A = ............;
+        A = A+a*((exp(%i*omega))^(-m));
     end
 end
 
-
 // Compute H(e^jw) into "H"
 // Write your code here
-H = ............;
+H = B./A;
 
-
+disp(H)
 
 // Plot H(e^jw)
 figure;
